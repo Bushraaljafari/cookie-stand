@@ -24,7 +24,7 @@
 // tokyo
 
 // dubai
-function randomNumber(min, max) {
+/*function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
@@ -78,4 +78,102 @@ const Seattle={
 Seattle.getCustomersPerHour();
 Seattle.getCookiesPerHour();
 Seattle.rander();
-console.log(Seattle);
+console.log(Seattle);*/
+
+
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+
+
+//----creating constactor
+
+function Shop(name, minCustomers,maxCustomers,avgCookie){
+  this.name=name;
+  this.minCustomers=maxCustomers;
+  this.maxCustomers=maxCustomers;
+  this.avgCookie=avgCookie;
+  total=0;
+  customersPerHour=[];
+  cookiesPerHour=[];
+}
+
+
+//----make prototypy for rander function
+
+Shop.prototype.render=function(){
+
+  total=0;
+
+  let parent=document.getElementsById('parent');
+  let nameElement=document.createElement('h3');
+  parent.appendChild(nameElement);
+  nameElement.textContent=this.name;
+  let ulElement=document.createElement('ul');
+  parent.appendChild(ulElement);
+
+  for (let i=0; i<hoursOfOperation.length;i++){
+    let liElement=document.createElement('li');
+    ulElement.appendChild(liElement);
+    liElement.textContent=`${hoursOfOperation[i]}:${this.cookiesPerHour[i]}cookies`;
+  }
+  let totalLi=document.createElement('li');
+  ulElement.appendChild(totalLi);
+  totalLi.textContent=`total : ${this.total}cookies`;
+
+
+};
+
+let seattle=new Shop('Seattle',23,65,6.3);
+
+seattle.render();
+console.log(seattle);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* let Shopes=[];
+
+
+   function shope(name, minCustomers, maxCustomers, avgCookie) {
+    this.name = name;
+    this.minCustomers = minCustomers;
+    this.maxCustomers = maxCustomers;
+    this.avgCookie = avgCookie;
+    this.total = 0;
+    Shopes.push(this);
+  }
+  //---------------------------------------
+  render() {
+    // make a row for the shop
+    let parent = document.getElementById('parent');
+    let nameElement = document.createElement('h3');
+    parent.appendChild(nameElement);
+    nameElement.textContent = this.name;
+    let ulElement = document.createElement('ul');
+    parent.appendChild(ulElement);
+    for (let i = 0; i < hoursOfOperation.length; i++) {
+      let liElement = document.createElement('li');
+      ulElement.appendChild(liElement);
+      liElement.textContent = `${hoursOfOperation[i]} :${this.cookiesPerHour[i]} cookies`;
+    }
+    let totalLi = document.createElement('li');
+    ulElement.appendChild(totalLi);
+    totalLi.textContent = `total : ${this.total} cookies`;
+  }
+}
+//---------------------------------------
+let Seattle =new Shop('Seattle',23,65,6.3);
+*/
