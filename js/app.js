@@ -24,7 +24,7 @@
 // tokyo
 
 // dubai
-function randomNumber(min, max) {
+/*function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
@@ -42,7 +42,7 @@ const Seattle={
 
   getCustomersPerHour:function(){
     for (let i=0; i<hoursOfOperation.length;i++){
-      this.customersPerHour.push(random(this.minCustomers,this.maxCustomers));
+      this.customersPerHour.push(randomNumber(this.minCustomers,this.maxCustomers));
     }
   },
 
@@ -57,7 +57,7 @@ const Seattle={
 
 
   render:function(){
-    let parent=document.getElementsById('parent');
+    let parent=document.getElementById('parent');
     let nameElement=document.createElement('h3');
     parent.appendChild(nameElement);
     nameElement.textContent=this.name;
@@ -67,15 +67,81 @@ const Seattle={
     for (let i=0; i<hoursOfOperation.length;i++){
       let liElement=document.createElement('li');
       ulElement.appendChild(liElement);
-      liElement.textContent=`${hoursOfOperation[i]}:${this.cookiesPerHour[i]}cookies`;
+      liElement.textContent=`${hoursOfOperation[i]} :${this.cookiesPerHour[i]} cookies`;
     }
     let totalLi=document.createElement('li');
     ulElement.appendChild(totalLi);
-    totalLi.textContent=`total : ${this.total}cookies`;
+    totalLi.textContent=`total : ${this.total} cookies`;
 
-  }};
+  },};
 
 Seattle.getCustomersPerHour();
 Seattle.getCookiesPerHour();
-Seattle.rander();
+Seattle.render();
 console.log(Seattle);
+*/
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+
+let Shopes=[];
+function Shop(name,minCustomers,maxCustomers,avgCookie){
+  this.name=name;
+  this.minCustomers=minCustomers;
+  this.maxCustomers=maxCustomers;
+  this.avgCookie=avgCookie;
+  this.total=0;
+
+
+  Shopes.push(this);
+
+}
+//---------------------------------------
+let Seattle =new Shop('Seattle',23,65,6.3);
+//---------------------------------------
+
+Shop.prototype.render=function(){
+  // make a row for the shop
+  let parent=document.getElementById('parent');
+  let nameElement=document.createElement('h3');
+  parent.appendChild(nameElement);
+  nameElement.textContent=this.name;
+  let ulElement=document.createElement('ul');
+  parent.appendChild(ulElement);
+
+  for (let i=0; i<hoursOfOperation.length;i++){
+    let liElement=document.createElement('li');
+    ulElement.appendChild(liElement);
+    liElement.textContent=`${hoursOfOperation[i]} :${this.cookiesPerHour[i]} cookies`;
+  }
+  let totalLi=document.createElement('li');
+  ulElement.appendChild(totalLi);
+  totalLi.textContent=`total : ${this.total} cookies`;
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Shope.prototype.rander=function(){
+  let parent = document.getElementById('parent');
+  console.log(parent);
+
+};*/
+
+
