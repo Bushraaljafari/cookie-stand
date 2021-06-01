@@ -28,7 +28,7 @@
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
-let hoursOfOperation=['6 am','7 am','8 am','9 am','10 am','11 am','12 am','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm','8 pm'];
+let hoursOfOperation=['6 am','7 am','8 am','9 am','10 am','11 am','12 am','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm'];
 
 const Seattle={
   name:'Seattle',
@@ -86,7 +86,7 @@ function randomNumber(min, max) {
 }
 
 
-
+shopes=[];
 //----creating constactor
 
 function Shop(name, minCustomers,maxCustomers,avgCookie){
@@ -97,7 +97,28 @@ function Shop(name, minCustomers,maxCustomers,avgCookie){
   total=0;
   customersPerHour=[];
   cookiesPerHour=[];
+
+
+  shopes.push(this);
 }
+
+
+
+let hoursOfOperation=['6 am','7 am','8 am','9 am','10 am','11 am','12 am','1 pm','2 pm','3 pm','4 pm','5 pm','6 pm','7 pm','8 pm'];
+
+
+function makingHeader(){
+  for( let i=0; i<hoursOfOperation.length;i++){
+    let thElement=document.createElement('th');
+    headingRow.appendChild(thElement);
+    thElement.textContent=hoursOfOperation[i];
+
+  }
+
+}
+makingHeader();
+
+
 
 
 //----make prototypy for rander function
@@ -107,9 +128,7 @@ Shop.prototype.render=function(){
   total=0;
 
   let parent=document.getElementsById('parent');
-  let nameElement=document.createElement('h3');
-  parent.appendChild(nameElement);
-  nameElement.textContent=this.name;
+
   let ulElement=document.createElement('ul');
   parent.appendChild(ulElement);
 
@@ -126,9 +145,26 @@ Shop.prototype.render=function(){
 };
 
 let seattle=new Shop('Seattle',23,65,6.3);
+let tokyo=new Shop('tokyo',3,24,1.2);
+let dubai=new Shop('dubai',11,38,3.7);
+let paris=new Shop('paris',20,38,2.3);
+let lima=new Shop('lima',2,16,4.6);
 
-seattle.render();
-console.log(seattle);
+
+let table = document.createElement('table');
+parent.appendChild(table);
+let headingRow=document.createElement('tr');
+table.appendChild(headingRow);
+
+
+
+
+for (let i=0;i<shopes.length;i++){
+  shopes[i].render();
+}
+console.log(shopes);
+
+
 
 
 
