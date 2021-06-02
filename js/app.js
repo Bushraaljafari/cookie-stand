@@ -18,6 +18,7 @@ function Shope(name, minCustomers, maxCustomers, avgCookie) {
   this.customerPerHour=[];
   this.avgCookiePerHour=[];
   this.total = 0;
+
   Shopes.push(this);
 }
 
@@ -30,22 +31,32 @@ Shope.prototype.calculationCustomerPerHour=function(){
   }};
 
 
+
+
 //-------------calculate cookie per hour
 
 Shope.prototype.calculationAvgCookiePerHour=function(){
   for(let i=0;i<hourOperation.length; i++){
     this.avgCookiePerHour.push( Math.floor(this.customerPerHour[i]*this.avgCookie));
+    this.total+=this.avgCookiePerHour[i];
   }};
 //------------function for header
 // ------------ make atable
 
 
-let parent=document.getElementById(parent);
+
+
+let parentE=document.getElementById('parent');
 let tableElement=document.createElement('table');
-parent.appendChild(tableElement);
+parentE.appendChild(tableElement);
 
 
 function headRow(){
+
+  /*let parent=document.getElementById('parent');
+  let tableElement=document.createElement('table');
+  parent.appendChild(tableElement);*/
+
   let trFirst=document.createElement('tr');
   tableElement.appendChild(trFirst);
 
@@ -86,17 +97,63 @@ Shope.prototype.render=function(){
 
   }
 
+  let totalTd=document.createElement('td');
+  infoRow.appendChild(totalTd);
+  totalTd.textContent=this.total;
 
 
 
 
 };
 
-let Seattle =new Shope('Seattle',23,65,6.3);
-Seattle.calculationCustomerPerHour();
-Seattle.calculationAvgCookiePerHour();
-Seattle.render();
-console.log(Seattle);
+function creatAfooterRow(){
+  let footerRow=document.createElement('tr');
+  tableElement.appendChild(footerRow);
+  let finishTh=document.createElement('th');
+  footerRow.appendChild(finishTh);
+  finishTh.textContent='Totals';
+
+  let megaTotal=0;
+
+  for(let i=0;i<hourOperation.length; i++){
+    let totalForPerHour=0;
+    for (let j=0; j<Shopes.length;j++){
+      totalForPerHour+=Shopes[j].avgCookiePerHour[i];
+      megaTotal+=Shopes[j].avgCookiePerHour[i];
+    }
+    let infoTh=document.createElement('th');
+    footerRow.appendChild(infoTh);
+    infoTh.textContent=totalForPerHour;
+
+  }
+  let finalTh=document.createElement('th');
+  footerRow.appendChild(finalTh);
+  finalTh.textContent=megaTotal;
+
+}
+
+
+
+
+
+
+new Shope('Seattle',23,65,6.3);
+new Shope('tokyo',3,24,1.2);
+new Shope('dubai',11,38,3.7);
+new Shope('paris',20,38,2.3);
+new Shope('lami',2,16,4.6);
+
+
+console.log(Shopes);
+
+
+for (let i = 0; i < Shopes.length; i++) {
+  Shopes[i].calculationCustomerPerHour();
+  Shopes[i].calculationAvgCookiePerHour();
+  Shopes[i].render();
+
+}
+creatAfooterRow();
 
 
 
