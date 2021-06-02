@@ -1,0 +1,26 @@
+*{background-color:#32ff7e;
+color:black;
+}
+
+header{
+    text-align: center;
+
+}
+
+
+
+form {
+    font: 1.2em sans-serif;
+    max-width: 320px;
+    
+    
+  }
+
+  input[type="text"],
+input[type="number"],
+input[type="value"],
+fieldset {
+  width : 100%;
+  border: 3px solid rgb(26, 19, 19);
+  box-sizing: border-box;
+}
