@@ -1,6 +1,11 @@
-h1{
-    background-color: #cd6133;
-}
 *{
     background-color:#ccae62 ;
+
+}
+table,tr,th,td{
+    border: 1px solid black;
+border-collapse:collapse ;
+}
+h1{
+    background-color: #cd6133;
 }
