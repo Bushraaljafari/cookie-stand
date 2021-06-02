@@ -145,6 +145,40 @@ new Shope('lami',2,16,4.6);
 
 
 console.log(Shopes);
+//----------1
+
+let CookiesForm=document.getElementById('CookiesForm');
+console.log(CookiesForm);
+
+CookiesForm.addEventListener('submit',submit);
+//-----------2
+
+function submit(event){
+  event.preventDefault();
+  console.log(event);
+  let locationName=event.target.locationName.value;
+  let minCustomers=event.target.min.value;
+  let maxCustomers=event.target.max.value;
+  let avgCookie=event.target.avg.value;
+  console.log(locationName);
+  console.log(minCustomers);
+  console.log(maxCustomers);
+  console.log(avgCookie);
+  let addedShopes=new Shope(locationName,minCustomers,maxCustomers,avgCookie);
+  console.log(addedShopes);
+
+
+  addedShopes.headRow();
+
+  addedShopes.customerPerHour();
+  addedShopes.avgCookiePerHour();
+  addedShopes.render();
+
+  addedShopes.creatAfooterRow();
+
+}
+
+
 
 
 for (let i = 0; i < Shopes.length; i++) {
@@ -154,6 +188,7 @@ for (let i = 0; i < Shopes.length; i++) {
 
 }
 creatAfooterRow();
+
 
 
 

@@ -3,8 +3,10 @@
 
 }
 table,tr,th,td{
-    border: 1px solid black;
+    border: 3px solid rgb(26, 19, 19);
 border-collapse:collapse ;
+box-sizing: border-box;
+font: 1em sans-serif bold;
 }
 h1{
     background-color: #cd6133;
