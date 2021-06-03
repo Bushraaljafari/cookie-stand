@@ -166,16 +166,14 @@ function submit(event){
   console.log(avgCookie);
   let addedShopes=new Shope(locationName,minCustomers,maxCustomers,avgCookie);
   console.log(addedShopes);
+  tableElement.textContent='';
+  headRow();
 
-
-  addedShopes.headRow();
-
-  addedShopes.customerPerHour();
-  addedShopes.avgCookiePerHour();
-  addedShopes.render();
-
-  addedShopes.creatAfooterRow();
-
+  for (let i = 0; i < Shopes.length; i++) {
+    Shopes[i].calculationCustomerPerHour();
+    Shopes[i].calculationAvgCookiePerHour();
+    Shopes[i].render();}
+  creatAfooterRow();
 }
 
 
