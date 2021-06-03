@@ -1,0 +1,28 @@
+*{
+    font-family: 'Roboto Slab', serif;
+}
+
+header{
+    background-color: chocolate;
+}
+#welcomem{
+    text-align: center;
+    font-size: large;
+color: darkolivegreen;
+font-weight: bolder;
+}
+
+ol,li{
+    background-color: darkgoldenrod;
+}
+#stand{
+    background-color: darkgreen;
+    font-weight: bolder;
+}
+h2{
+    float: left;
+}
+#link{
+    text-decoration: none;
+    color: darkred;
+}
