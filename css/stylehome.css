@@ -1,10 +1,20 @@
 *{
     font-family: 'Roboto Slab', serif;
+    padding-left: 30px;
+    padding-right: 30px;
+   
 }
 
 header{
-    background-color: chocolate;
+    /*background-color: chocolate;*/
+    background-color: black;
+    color: gold;
+    height: 110px;
+  
+
 }
+
+
 #welcomem{
     text-align: center;
     font-size: large;
@@ -12,12 +22,24 @@ color: darkolivegreen;
 font-weight: bolder;
 }
 
+main{
+   /* background-color:  #ffda79;*/
+   background-color: gold;
+}
+
 ol,li{
-    background-color: darkgoldenrod;
+    /*background-color: darkgoldenrod;*/
+    background-color:darkolivegreen ;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    
+    
 }
 #stand{
     background-color: darkgreen;
     font-weight: bolder;
+    font-size: 20px;
+
 }
 h2{
     float: left;
@@ -26,3 +48,49 @@ h2{
     text-decoration: none;
     color: darkred;
 }
+h1{
+    font-size: 50px;
+    text-align: center;
+}
+img{
+   
+
+    vertical-align: middle;
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+   
+
+}
+
+
+
+
+
+
+
+footer{
+    color: gold;
+    background-color:black;
+   /* height: 70px;*/
+ 
+}
+#call{
+    width: 150px;
+   color: gold;
+    background-color: green;
+}
+#email{
+    text-decoration: none;
+    color: gold;
+   
+}
+#copy{
+    text-align: center;
+}
+
+
+
+
+
+

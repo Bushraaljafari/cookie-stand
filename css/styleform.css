@@ -1,9 +1,11 @@
-*{background-color:#32ff7e;
-color:black;
+*{ 
+color:gold;
 }
 
 header{
     text-align: center;
+    
+   
 
 }
 
@@ -14,13 +16,27 @@ form {
     max-width: 320px;
     
     
+    
   }
 
   input[type="text"],
 input[type="number"],
 input[type="value"],
-fieldset {
+fieldset  {
   width : 100%;
-  border: 3px solid rgb(26, 19, 19);
+  border: 3px solid rgb(167, 164, 5);
   box-sizing: border-box;
-}
+  
+
+color: goldenrod;
+font-stretch: extra-expanded;
+background-color: rgb(58, 4, 17);
+
+
+
+  font-family: 'Indie Flower', cursive ;
+/*font-family: 'Lobster', cursive;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Sigmar One', cursive;
+*/}
+

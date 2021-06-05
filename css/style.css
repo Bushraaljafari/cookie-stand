@@ -1,14 +1,32 @@
-*{
+/**{
     background-color:#ccae62 ;
 
-}
+}*/
 table,tr,th,td{
-    border: 3px solid rgb(26, 19, 19);
+    border: 3px solid #49062b;
+    color: rgba(116, 2, 2, 0.767);
 border-collapse:collapse ;
 box-sizing: border-box;
 font: 1em sans-serif bold;
+margin-top: 30px;
+background-color: rgba(184, 124, 11, 0.836);
+
+
+/*font-family: 'Indie Flower', cursive;*/
+/*font-family: 'Lobster', cursive;
+font-family: 'Open Sans', sans-serif;*/
+font-family: 'Shadows Into Light', cursive;
+/*font-family: 'Sigmar One', cursive;*/
 }
+
+
+
 h1{
-    background-color: #cd6133;
+    background-color: #49062b;
+    font-size: 70px;
+}
+h2{
+    background-color: rgba(184, 124, 11, 0.836);
+    color: gold;
 }
 
